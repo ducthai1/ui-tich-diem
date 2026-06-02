@@ -1,0 +1,49 @@
+"use client";
+
+import { ConversionSettings } from "./conversion-settings";
+import { LoyaltyHeader } from "./loyalty-header";
+import { ScopeSettings } from "./scope-settings";
+import { useLoyaltySettings } from "./use-loyalty-settings";
+import { useState } from "react";
+
+/**
+ * Loyalty settings screen body: a single white card. When the toggle is OFF
+ * only the header prompt shows; turning it ON reveals the full configuration
+ * form with a sticky Cancel / Save footer.
+ */
+export function LoyaltySettings() {
+  const [enabled, setEnabled] = useState(false);
+  const { state, set, reset } = useLoyaltySettings();
+
+  return (
+    <section className="flex-1">
+      <div className="overflow-hidden rounded-card bg-white shadow-card">
+        <div className="p-6">
+          <LoyaltyHeader enabled={enabled} onToggle={setEnabled} />
+        </div>
+
+        {enabled && (
+          <>
+            <div className="h-px bg-[rgba(210,205,219,0.5)]" />
+            <div className="flex flex-col gap-6 p-6">
+              <ConversionSettings state={state} set={set} />
+              <ScopeSettings state={state} set={set} />
+            </div>
+
+            <div className="flex justify-end gap-3 border-t border-line p-6">
+              <button
+                onClick={reset}
+                className="rounded-lg border border-line px-5 py-2.5 text-[15px] font-medium leading-5 text-ink-strong transition-colors hover:bg-canvas"
+              >
+                Hủy
+              </button>
+              <button className="rounded-lg bg-primary px-6 py-2.5 text-[15px] font-medium leading-5 text-white transition-colors hover:bg-primary-hover">
+                Lưu
+              </button>
+            </div>
+          </>
+        )}
+      </div>
+    </section>
+  );
+}
