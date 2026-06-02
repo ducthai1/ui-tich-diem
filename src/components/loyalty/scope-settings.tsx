@@ -93,11 +93,14 @@ export function ScopeSettings({ state, set }: Props) {
             Lưu ý:
           </span>
         </div>
-        <p className="text-[14px] leading-5 text-ink-faint">
-          • Bật thiết lập tích điểm, mặc định sẽ khởi tạo với tất cả hàng hóa
-          trong gian hàng của bạn được tích điểm. Bạn có thể thiết lập riêng cho
-          từng sản phẩm nếu muốn
-        </p>
+        <div className="flex gap-1.5 pl-1.5 text-[14px] leading-5 text-ink-faint">
+          <span aria-hidden>•</span>
+          <span>
+            Bật thiết lập tích điểm, mặc định sẽ khởi tạo với tất cả hàng hóa
+            trong gian hàng của bạn được tích điểm. Bạn có thể thiết lập riêng
+            cho từng sản phẩm nếu muốn
+          </span>
+        </div>
       </div>
     </div>
   );

@@ -31,7 +31,7 @@ export function LoyaltySettings() {
             </div>
 
             {/* Footer padding 8/16/16 and fixed button widths match Figma exactly. */}
-            <div className="flex justify-end gap-1 border-t border-line px-4 pb-4 pt-2">
+            <div className="flex justify-end gap-1 border-t border-line-strong px-4 pb-4 pt-2">
               <button
                 onClick={reset}
                 className="flex h-9 w-[137px] items-center justify-center rounded-lg border border-primary text-[15px] font-semibold leading-5 text-primary transition-colors hover:bg-primary-surface"
