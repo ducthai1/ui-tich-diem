@@ -21,15 +21,15 @@ export function AmountInput({
   className,
 }: AmountInputProps) {
   return (
-    <div className={cn("flex items-center gap-2", className)}>
+    <div className={cn("flex items-center gap-3", className)}>
       <input
         inputMode="numeric"
         value={value}
         placeholder="0"
         onChange={(e) => onChange(e.target.value.replace(/[^\d.]/g, ""))}
-        className="h-9 w-full min-w-0 flex-1 rounded-card border border-line-strong bg-white px-3 text-[15px] font-medium leading-5 text-ink-strong outline-none placeholder:font-normal placeholder:text-ink-subtle focus:border-primary"
+        className="h-9 w-full min-w-0 flex-1 rounded-card border border-line-strong bg-white px-3 text-[16px] font-medium leading-6 text-ink-strong outline-none placeholder:font-normal placeholder:text-ink-subtle focus:border-primary"
       />
-      <span className="flex h-9 shrink-0 items-center justify-center rounded-card bg-primary-accent px-3 text-[15px] font-medium leading-5 text-[#F3F3F4]">
+      <span className="flex h-9 shrink-0 items-center justify-center rounded-card bg-primary-accent px-2 text-[16px] font-medium leading-6 text-[#F3F3F4]">
         {unit}
       </span>
     </div>

@@ -10,7 +10,7 @@ interface Props {
   set: <K extends keyof LoyaltyState>(key: K, value: LoyaltyState[K]) => void;
 }
 
-const SECTION_TITLE = "text-[15px] font-semibold leading-5 text-ink";
+const SECTION_TITLE = "text-[16px] font-semibold leading-6 text-ink";
 
 const CUSTOMER_GROUP_OPTIONS = ["Nhóm A", "Nhóm B", "Nhóm C", "Nhóm D", "Nhóm E"];
 const BRANCH_OPTIONS = [

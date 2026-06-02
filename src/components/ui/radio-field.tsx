@@ -17,10 +17,12 @@ export function RadioField({ checked, onChange, label }: RadioFieldProps) {
     >
       <span
         className={cn(
-          "flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-full border transition-colors",
-          checked ? "border-[5px] border-primary bg-white" : "border-line-strong bg-white",
+          "flex h-5 w-5 shrink-0 items-center justify-center rounded-full border bg-white transition-colors",
+          checked ? "border-2 border-primary" : "border-line-strong",
         )}
-      />
+      >
+        {checked && <span className="h-2.5 w-2.5 rounded-full bg-primary" />}
+      </span>
       <span className="text-[14px] leading-5 text-ink">{label}</span>
     </label>
   );

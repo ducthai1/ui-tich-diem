@@ -18,7 +18,7 @@ export function CheckboxField({ checked, onChange, label }: CheckboxFieldProps) 
     >
       <span
         className={cn(
-          "flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-[4px] border transition-colors",
+          "flex h-5 w-5 shrink-0 items-center justify-center rounded-[4px] border transition-colors",
           checked
             ? "border-primary bg-primary text-white"
             : "border-line-strong bg-white text-transparent",
