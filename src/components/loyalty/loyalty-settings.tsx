@@ -17,7 +17,7 @@ export function LoyaltySettings() {
 
   return (
     <section className="flex-1">
-      <div className="overflow-hidden rounded-card bg-white shadow-card">
+      <div className="overflow-hidden rounded-lg bg-white shadow-card">
         <div className="p-6">
           <LoyaltyHeader enabled={enabled} onToggle={setEnabled} />
         </div>
@@ -30,14 +30,15 @@ export function LoyaltySettings() {
               <ScopeSettings state={state} set={set} />
             </div>
 
-            <div className="flex justify-end gap-3 border-t border-line p-6">
+            {/* Footer padding 8/16/16 and fixed button widths match Figma exactly. */}
+            <div className="flex justify-end gap-1 border-t border-line px-4 pb-4 pt-2">
               <button
                 onClick={reset}
-                className="rounded-lg border border-line px-5 py-2.5 text-[15px] font-medium leading-5 text-ink-strong transition-colors hover:bg-canvas"
+                className="flex h-9 w-[137px] items-center justify-center rounded-lg border border-primary text-[15px] font-semibold leading-5 text-primary transition-colors hover:bg-primary-surface"
               >
                 Hủy
               </button>
-              <button className="rounded-lg bg-primary px-6 py-2.5 text-[15px] font-medium leading-5 text-white transition-colors hover:bg-primary-hover">
+              <button className="flex h-9 w-[123px] items-center justify-center rounded-lg bg-primary text-[15px] font-medium leading-5 text-[#ECFFF8] transition-colors hover:bg-primary-hover">
                 Lưu
               </button>
             </div>

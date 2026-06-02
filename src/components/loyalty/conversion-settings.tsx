@@ -22,7 +22,7 @@ interface Props {
 // Each row: fixed label column on the left + an input zone that stretches to the
 // card's right edge, so inputs grow with the viewport and the trailing
 // unit/text stays flush-right (matches Figma).
-const ROW = "flex items-center gap-3";
+const ROW = "flex items-center gap-6";
 const LABEL = "flex w-[300px] shrink-0 items-center gap-1 text-[14px] leading-5 text-ink";
 const EQ = "w-4 shrink-0 text-center text-[16px] leading-6 text-ink";
 const UNIT_GHOST = "shrink-0 rounded-lg px-3 py-1.5 text-[15px] font-medium leading-5";
