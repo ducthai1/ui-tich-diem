@@ -10,7 +10,7 @@ interface LoyaltyHeaderProps {
 export function LoyaltyHeader({ enabled, onToggle }: LoyaltyHeaderProps) {
   return (
     <div className="flex items-start justify-between gap-4">
-      <div className="flex gap-3">
+      <div className="flex min-w-0 flex-1 gap-3">
         <Image
           src="/images/loyalty/star.svg"
           alt=""
@@ -22,7 +22,7 @@ export function LoyaltyHeader({ enabled, onToggle }: LoyaltyHeaderProps) {
           <h2 className="text-[16px] font-semibold leading-6 text-ink">
             Thiết lập tích điểm
           </h2>
-          <p className="max-w-[640px] text-[14px] leading-5 text-ink-muted">
+          <p className="text-[14px] leading-5 text-ink-muted">
             Tích điểm thưởng khi mua hàng, quy đổi điểm thưởng để thanh toán đơn
             hàng hoặc sử dụng điểm thưởng để chia nhóm khách hàng.
           </p>

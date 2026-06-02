@@ -19,10 +19,13 @@ interface Props {
   set: <K extends keyof LoyaltyState>(key: K, value: LoyaltyState[K]) => void;
 }
 
-const ROW = "flex flex-wrap items-center gap-3";
-const LABEL = "flex w-[320px] shrink-0 items-center gap-1 text-[14px] leading-5 text-ink";
-const COL = "w-[240px] shrink-0";
+// Each row: fixed label column on the left + an input zone that stretches to the
+// card's right edge, so inputs grow with the viewport and the trailing
+// unit/text stays flush-right (matches Figma).
+const ROW = "flex items-center gap-3";
+const LABEL = "flex w-[300px] shrink-0 items-center gap-1 text-[14px] leading-5 text-ink";
 const EQ = "w-4 shrink-0 text-center text-[16px] leading-6 text-ink";
+const UNIT_GHOST = "shrink-0 rounded-lg px-3 py-1.5 text-[15px] font-medium leading-5";
 
 /** Point conversion rate, redeem-by-points settings, and tick-rule exclusions. */
 export function ConversionSettings({ state, set }: Props) {
@@ -38,15 +41,17 @@ export function ConversionSettings({ state, set }: Props) {
           value={state.spendPerPoint}
           onChange={(v) => set("spendPerPoint", v)}
           unit="VND"
-          className="w-[460px]"
+          className="flex-1"
         />
         <span className={EQ}>=</span>
-        <span className="text-[16px] leading-6 text-ink">1 điểm thưởng</span>
+        <span className="shrink-0 whitespace-nowrap text-[16px] leading-6 text-ink">
+          1 điểm thưởng
+        </span>
       </div>
 
       {/* Allow paying by points: X points = Y VND */}
       <div className={ROW}>
-        <div className="w-[320px] shrink-0">
+        <div className="flex w-[300px] shrink-0 items-center">
           <CheckboxField
             checked={state.allowPayByPoint}
             onChange={(v) => set("allowPayByPoint", v)}
@@ -57,30 +62,37 @@ export function ConversionSettings({ state, set }: Props) {
           value={state.payPoint}
           onChange={(v) => set("payPoint", v)}
           unit="Điểm"
-          className={COL}
+          className="flex-1"
         />
         <span className={EQ}>=</span>
         <AmountInput
           value={state.payValue}
           onChange={(v) => set("payValue", v)}
           unit="VND"
-          className={COL}
+          className="flex-1"
         />
       </div>
 
-      {/* Pay by points only after N purchases (input aligned to 2nd column) */}
+      {/* Pay by points only after N purchases (input aligned under row-2 col 2) */}
       <div className={ROW}>
         <span className={LABEL}>
           Thanh toán bằng điểm sau
           <InfoTooltip title="Quy định số tiền mua hàng để đổi lấy 1 điểm thưởng" />
         </span>
-        <span className={COL} aria-hidden />
-        <span className={EQ} aria-hidden />
+        {/* Invisible mirrors of row-2's first input + unit + "=" keep this input
+            in the same column on every screen width. */}
+        <span className="invisible flex-1" aria-hidden />
+        <span className={`invisible ${UNIT_GHOST}`} aria-hidden>
+          Điểm
+        </span>
+        <span className={`invisible ${EQ}`} aria-hidden>
+          =
+        </span>
         <AmountInput
           value={state.payAfterPurchases}
           onChange={(v) => set("payAfterPurchases", v)}
           unit="Lần mua"
-          className={COL}
+          className="flex-1"
         />
       </div>
 

@@ -85,14 +85,18 @@ export function ScopeSettings({ state, set }: Props) {
         />
       </div>
 
-      {/* Lưu ý note */}
-      <div className="flex gap-2 rounded-lg bg-primary-surface p-3">
-        <Info className="mt-0.5 h-5 w-5 shrink-0 text-primary-accent" />
-        <p className="text-[14px] leading-5 text-ink">
-          <span className="font-semibold">Lưu ý: </span>
-          Bật thiết lập tích điểm, mặc định sẽ khởi tạo với tất cả hàng hóa trong
-          gian hàng của bạn được tích điểm. Bạn có thể thiết lập riêng cho từng
-          sản phẩm nếu muốn.
+      {/* Lưu ý note: header row, then the detail on its own line (per Figma) */}
+      <div className="flex flex-col gap-1 rounded-lg bg-info-surface p-3">
+        <div className="flex items-center gap-2">
+          <Info className="h-5 w-5 shrink-0 text-info" />
+          <span className="text-[14px] font-semibold leading-5 text-ink">
+            Lưu ý:
+          </span>
+        </div>
+        <p className="text-[14px] leading-5 text-ink-faint">
+          - Bật thiết lập tích điểm, mặc định sẽ khởi tạo với tất cả hàng hóa
+          trong gian hàng của bạn được tích điểm. Bạn có thể thiết lập riêng cho
+          từng sản phẩm nếu muốn
         </p>
       </div>
     </div>
