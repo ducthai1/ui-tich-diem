@@ -44,7 +44,7 @@ function ModuleButton({ label, icon: Icon, active, bold }: NavItem) {
       className={cn(
         "flex items-center gap-1.5 text-[15px] leading-5 transition-colors",
         active
-          ? "font-semibold text-primary"
+          ? "font-semibold text-primary-active"
           : bold
             ? "font-semibold text-ink-strong hover:text-primary"
             : "font-normal text-ink-strong hover:text-primary",

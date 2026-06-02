@@ -7,9 +7,9 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#00664B",
+          DEFAULT: "#119C72", // brand/action green used across buttons, toggle, controls
           hover: "#008661",
-          active: "#007350",
+          active: "#007350", // darker green for active nav label
           light: "#B0E9DA",
           lighter: "#CFFFF0",
           surface: "#ECFFF8",
